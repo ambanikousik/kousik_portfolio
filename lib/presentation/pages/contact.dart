@@ -12,38 +12,38 @@ class Contact extends StatelessWidget {
     return Scaffold(
       appBar: TopBar(),
       body: Container(
-        margin: EdgeInsets.symmetric(
+        margin: const EdgeInsets.symmetric(
           horizontal: 100,
         ),
         child: ListView(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 92,
             ),
-            Container(
+            SizedBox(
               height: size.height * 0.68,
               width: MediaQuery.of(context).size.width - 100,
               // color: Colors.orange,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomText(
+                  const CustomText(
                     text: "0.4 What's Next?",
                     textsize: 16.0,
                     color: Color(0xff41FBDA),
                     letterSpacing: 3.0,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16.0,
                   ),
-                  CustomText(
+                  const CustomText(
                     text: "Get In Touch",
                     textsize: 42.0,
                     color: Colors.white,
                     letterSpacing: 3.0,
                     fontWeight: FontWeight.w700,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16.0,
                   ),
                   Wrap(
@@ -59,7 +59,7 @@ class Contact extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 32.0,
                   ),
                   InkWell(
@@ -68,21 +68,21 @@ class Contact extends StatelessWidget {
                     },
                     child: Card(
                       elevation: 4.0,
-                      color: Color(0xff64FFDA),
+                      color: const Color(0xff64FFDA),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6.0),
                       ),
                       child: Container(
-                        margin: EdgeInsets.all(0.85),
+                        margin: const EdgeInsets.all(0.85),
                         height: size.height * 0.09,
                         width: size.width * 0.10,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: Color(0xff0A192F),
+                          color: const Color(0xff0A192F),
                           borderRadius: BorderRadius.circular(6.0),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(
                             horizontal: 8.0,
                           ),
                           child: Text(

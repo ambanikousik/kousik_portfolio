@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../router/router.gr.dart';
-import 'custom_button.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
   @override
