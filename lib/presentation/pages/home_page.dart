@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kousik_portfolio/presentation/Method.dart';
+import 'package:kousik_portfolio/presentation/method.dart';
 import 'package:kousik_portfolio/presentation/widgets/custom_text.dart';
 // import 'package:styled_widget/styled_widget.dart';
 import '../widgets/topbar.dart';
