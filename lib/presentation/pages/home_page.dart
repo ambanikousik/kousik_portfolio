@@ -29,23 +29,23 @@ class HomePage extends StatelessWidget {
                       color: const Color(0xffffa8b2d1),
                       iconSize: 16.0,
                       onPressed: () {
-                        method.launchURL("https://github.com/champ96k");
+                        method.launchURL("https://github.com/ambanikousik");
                       }),
-                  IconButton(
-                      icon: const FaIcon(FontAwesomeIcons.twitter),
-                      // ignore: use_full_hex_values_for_flutter_colors
-                      color: const Color(0xffffa8b2d1),
-                      iconSize: 16.0,
-                      onPressed: () {
-                        method.launchURL("https://twitter.com/champ_96k");
-                      }),
+                  // IconButton(
+                  //     icon: const FaIcon(FontAwesomeIcons.twitter),
+                  //     // ignore: use_full_hex_values_for_flutter_colors
+                  //     color: const Color(0xffffa8b2d1),
+                  //     iconSize: 16.0,
+                  //     onPressed: () {
+                  //       method.launchURL("https://twitter.com/champ_96k");
+                  //     }),
                   IconButton(
                     icon: const FaIcon(FontAwesomeIcons.linkedin),
                     // ignore: use_full_hex_values_for_flutter_colors
                     color: const Color(0xffffA8B2D1),
                     onPressed: () {
                       method.launchURL(
-                          "https://www.linkedin.com/in/tushar-nikam-a29a97131/");
+                          "https://www.linkedin.com/in/ri-kousik-b5890698/");
                     },
                     iconSize: 16.0,
                   ),

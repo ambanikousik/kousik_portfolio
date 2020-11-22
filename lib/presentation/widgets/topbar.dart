@@ -18,7 +18,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             onPressed: () {
               if (RouteData.of(context).path != Routes.homePage) {
-                context.navigator.push(Routes.homePage);
+                context.navigator.popUntilRoot();
               }
             }),
         Row(

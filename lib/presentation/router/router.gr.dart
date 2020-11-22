@@ -11,9 +11,9 @@ import 'package:flutter/material.dart';
 
 import '../pages/about.dart';
 import '../pages/contact.dart';
-import '../pages/experience.dart';
+import '../pages/experience/experience.dart';
 import '../pages/home_page.dart';
-import '../pages/works.dart';
+import '../pages/works/works.dart';
 
 class Routes {
   static const String homePage = '/home-page';

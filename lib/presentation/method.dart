@@ -10,7 +10,7 @@ class Method {
   }
 
   Future launchCaller() async {
-    const url = "tel:9595242507";
+    const url = "tel: +8801778846466";
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -19,8 +19,8 @@ class Method {
   }
 
   Future launchEmail() async {
-    if (await canLaunch("mailto:champ96k@gmail.com")) {
-      await launch("mailto:champ96k@gmail.com");
+    if (await canLaunch("mailto:rikousik@gmail.com")) {
+      await launch("mailto:rikousik@gmail.com");
     } else {
       throw 'Could not launch';
     }
