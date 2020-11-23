@@ -8,6 +8,9 @@ part of 'experience.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+Experience _$ExperienceFromJson(Map<String, dynamic> json) {
+  return _Experience.fromJson(json);
+}
 
 /// @nodoc
 class _$ExperienceTearOff {
@@ -17,12 +20,17 @@ class _$ExperienceTearOff {
   _Experience call(
       {@required String title,
       @required String description,
-      @required String timeline}) {
+      @required String duration}) {
     return _Experience(
       title: title,
       description: description,
-      timeline: timeline,
+      duration: duration,
     );
+  }
+
+// ignore: unused_element
+  Experience fromJson(Map<String, Object> json) {
+    return Experience.fromJson(json);
   }
 }
 
@@ -34,8 +42,9 @@ const $Experience = _$ExperienceTearOff();
 mixin _$Experience {
   String get title;
   String get description;
-  String get timeline;
+  String get duration;
 
+  Map<String, dynamic> toJson();
   $ExperienceCopyWith<Experience> get copyWith;
 }
 
@@ -44,7 +53,7 @@ abstract class $ExperienceCopyWith<$Res> {
   factory $ExperienceCopyWith(
           Experience value, $Res Function(Experience) then) =
       _$ExperienceCopyWithImpl<$Res>;
-  $Res call({String title, String description, String timeline});
+  $Res call({String title, String description, String duration});
 }
 
 /// @nodoc
@@ -59,13 +68,13 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
   $Res call({
     Object title = freezed,
     Object description = freezed,
-    Object timeline = freezed,
+    Object duration = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed ? _value.title : title as String,
       description:
           description == freezed ? _value.description : description as String,
-      timeline: timeline == freezed ? _value.timeline : timeline as String,
+      duration: duration == freezed ? _value.duration : duration as String,
     ));
   }
 }
@@ -76,7 +85,7 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
           _Experience value, $Res Function(_Experience) then) =
       __$ExperienceCopyWithImpl<$Res>;
   @override
-  $Res call({String title, String description, String timeline});
+  $Res call({String title, String description, String duration});
 }
 
 /// @nodoc
@@ -93,37 +102,42 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
   $Res call({
     Object title = freezed,
     Object description = freezed,
-    Object timeline = freezed,
+    Object duration = freezed,
   }) {
     return _then(_Experience(
       title: title == freezed ? _value.title : title as String,
       description:
           description == freezed ? _value.description : description as String,
-      timeline: timeline == freezed ? _value.timeline : timeline as String,
+      duration: duration == freezed ? _value.duration : duration as String,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_Experience implements _Experience {
   const _$_Experience(
       {@required this.title,
       @required this.description,
-      @required this.timeline})
+      @required this.duration})
       : assert(title != null),
         assert(description != null),
-        assert(timeline != null);
+        assert(duration != null);
+
+  factory _$_Experience.fromJson(Map<String, dynamic> json) =>
+      _$_$_ExperienceFromJson(json);
 
   @override
   final String title;
   @override
   final String description;
   @override
-  final String timeline;
+  final String duration;
 
   @override
   String toString() {
-    return 'Experience(title: $title, description: $description, timeline: $timeline)';
+    return 'Experience(title: $title, description: $description, duration: $duration)';
   }
 
   @override
@@ -135,9 +149,9 @@ class _$_Experience implements _Experience {
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
-            (identical(other.timeline, timeline) ||
+            (identical(other.duration, duration) ||
                 const DeepCollectionEquality()
-                    .equals(other.timeline, timeline)));
+                    .equals(other.duration, duration)));
   }
 
   @override
@@ -145,25 +159,33 @@ class _$_Experience implements _Experience {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(timeline);
+      const DeepCollectionEquality().hash(duration);
 
   @override
   _$ExperienceCopyWith<_Experience> get copyWith =>
       __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ExperienceToJson(this);
+  }
 }
 
 abstract class _Experience implements Experience {
   const factory _Experience(
       {@required String title,
       @required String description,
-      @required String timeline}) = _$_Experience;
+      @required String duration}) = _$_Experience;
+
+  factory _Experience.fromJson(Map<String, dynamic> json) =
+      _$_Experience.fromJson;
 
   @override
   String get title;
   @override
   String get description;
   @override
-  String get timeline;
+  String get duration;
   @override
   _$ExperienceCopyWith<_Experience> get copyWith;
 }

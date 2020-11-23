@@ -44,7 +44,7 @@ class CustomTimeLine extends StatelessWidget {
             ),
           ),
           Text(
-            experience.timeline,
+            experience.duration,
             style: TextStyle(
               fontSize: 12.0,
               color: const Color(0xffCCD6F6).withOpacity(0.5),

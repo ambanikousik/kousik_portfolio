@@ -15,7 +15,7 @@ class OSImages extends StatelessWidget {
           height: size.height * 0.73,
           width: size.width * 0.17,
           fit: BoxFit.cover,
-          image: AssetImage(image),
+          image: NetworkImage(image),
         ),
       ),
     );

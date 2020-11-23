@@ -50,7 +50,7 @@ class FeatureProjectWidget extends StatelessWidget {
                     width: size.width * 0.5,
                     child: Image(
                       fit: BoxFit.contain,
-                      image: AssetImage(featureProject.image),
+                      image: NetworkImage(featureProject.image.url),
                     ),
                   ),
                 ),
@@ -125,7 +125,7 @@ class FeatureProjectWidget extends StatelessWidget {
               Image(
                 // height: size.height * .5,
                 fit: BoxFit.contain,
-                image: AssetImage(featureProject.image),
+                image: NetworkImage(featureProject.image.url),
               ).padding(vertical: 20),
               Container(
                 alignment: Alignment.center,

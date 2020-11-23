@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kousik_portfolio/presentation/method.dart';
 import 'package:kousik_portfolio/presentation/widgets/custom_text.dart';
-// import 'package:styled_widget/styled_widget.dart';
+import 'package:styled_widget/styled_widget.dart';
 import '../widgets/topbar.dart';
 
 class HomePage extends StatelessWidget {
@@ -28,17 +28,9 @@ class HomePage extends StatelessWidget {
                       // ignore: use_full_hex_values_for_flutter_colors
                       color: const Color(0xffffa8b2d1),
                       iconSize: 16.0,
-                      onPressed: () {
+                      onPressed: () async {
                         method.launchURL("https://github.com/ambanikousik");
                       }),
-                  // IconButton(
-                  //     icon: const FaIcon(FontAwesomeIcons.twitter),
-                  //     // ignore: use_full_hex_values_for_flutter_colors
-                  //     color: const Color(0xffffa8b2d1),
-                  //     iconSize: 16.0,
-                  //     onPressed: () {
-                  //       method.launchURL("https://twitter.com/champ_96k");
-                  //     }),
                   IconButton(
                     icon: const FaIcon(FontAwesomeIcons.linkedin),
                     // ignore: use_full_hex_values_for_flutter_colors
@@ -141,9 +133,18 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            Image(
+              // height: size.width * 0.2,
+              width: size.width * 0.2,
+              fit: BoxFit.cover,
+              image: const NetworkImage(
+                  "https://cdn.apito.io/media/159317102/medium/YX30P9Z0GO_hvk.jpg"),
+            )
+                .padding(all: 10)
+                .decorated(border: Border.all(color: const Color(0xff64FFDA))),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.07,
-              height: MediaQuery.of(context).size.height - 82,
+              width: size.width * 0.07,
+              height: size.height - 82,
               //color: Colors.orange,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
