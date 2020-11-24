@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kousik_portfolio/application/works/bloc/works_bloc.dart';
 import 'package:kousik_portfolio/presentation/widgets/custom_title.dart';
 import 'package:kousik_portfolio/presentation/widgets/feature_project_widget.dart';
+import 'package:kousik_portfolio/presentation/widgets/loading_widget.dart';
 import 'package:kousik_portfolio/presentation/widgets/topbar.dart';
 
 class WorksPage extends StatelessWidget {
@@ -10,31 +11,54 @@ class WorksPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<WorksBloc, WorksState>(builder: (context, state) {
-      final List<Widget> _widgets = [
-        const CustomTitle(title: "Some Things I've Built", index: "0.3"),
-        ...List<FeatureProjectWidget>.from(
-            state.projects.map((e) => FeatureProjectWidget(
-                  featureProject: e,
-                )))
-      ];
-
-      return LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          return Scaffold(
-            appBar: TopBar(),
-            body: Container(
-              margin: EdgeInsets.symmetric(
-                  horizontal: constraints.maxWidth >= 1100 ? 100 : 20),
-              child: ListView.builder(
-                itemCount: _widgets.length,
-                itemBuilder: (context, index) => _widgets[index],
-              ),
-            ),
-          );
+    return BlocConsumer<WorksBloc, WorksState>(
+        listenWhen: (prevState, currentState) =>
+            prevState.loading != currentState.loading,
+        listener: (context, state) {
+          if (state.loading) {
+            showDialog(
+              context: context,
+              barrierColor: Colors.black12,
+              barrierDismissible: false,
+              builder: (BuildContext context) {
+                return const AlertDialog(
+                  backgroundColor: Colors.transparent,
+                  content: LoadingWidget(),
+                );
+              },
+            );
+          } else {
+            Navigator.of(context).pop();
+          }
+          // do stuff here based on BlocA's state
         },
-      );
-    });
+        buildWhen: (prevState, currentState) =>
+            prevState.projects != currentState.projects,
+        builder: (context, state) {
+          final List<Widget> _widgets = [
+            const CustomTitle(title: "Some Things I've Built", index: "0.3"),
+            ...List<FeatureProjectWidget>.from(
+                state.projects.map((e) => FeatureProjectWidget(
+                      featureProject: e,
+                    )))
+          ];
+
+          return LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints constraints) {
+              return Scaffold(
+                appBar: TopBar(),
+                body: Container(
+                  margin: EdgeInsets.symmetric(
+                      horizontal: constraints.maxWidth >= 1100 ? 100 : 20),
+                  child: ListView.builder(
+                    itemCount: _widgets.length,
+                    itemBuilder: (context, index) => _widgets[index],
+                  ),
+                ),
+              );
+            },
+          );
+        });
 
     // return Scaffold(
     //     appBar: TopBar(),

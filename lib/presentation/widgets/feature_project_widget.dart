@@ -145,7 +145,7 @@ class FeatureProjectWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   IconButton(
-                    icon: const FaIcon(FontAwesomeIcons.github),
+                    icon: const FaIcon(FontAwesomeIcons.link),
                     color: Colors.white.withOpacity(0.3),
                     onPressed: () => method.launchURL(featureProject.gitLink),
                   ),
