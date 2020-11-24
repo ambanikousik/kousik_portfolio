@@ -52,7 +52,7 @@ class Contact extends StatelessWidget {
                       Wrap(
                         children: [
                           Text(
-                            "Although I'm currently looking for SDE-1 opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+                            "I'm currently looking for more software development projects, my inbox is always open. If you want to hire me, check out my market place profile and DM me, I'll try my best to get back to you!",
                             textAlign: TextAlign.start,
                             style: TextStyle(
                               color: Colors.white.withOpacity(0.4),
@@ -65,18 +65,41 @@ class Contact extends StatelessWidget {
                       const SizedBox(
                         height: 32.0,
                       ),
-                      InkWell(
-                        onTap: () {
-                          method.launchEmail();
-                        },
-                        child: const Text(
-                          "Say Hello",
-                          style: TextStyle(
-                            color: Color(0xff64FFDA),
+                      Row(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              method.launchURL(
+                                  "https://www.fiverr.com/share/xXAgwq");
+                            },
+                            child: const Text(
+                              "Fiverr",
+                              style: TextStyle(
+                                color: Color(0xff64FFDA),
+                              ),
+                            ),
+                          ).padding(all: 15).decorated(
+                              border:
+                                  Border.all(color: const Color(0xff64FFDA))),
+                          const SizedBox(
+                            width: 32.0,
                           ),
-                        ),
-                      ).padding(all: 15).decorated(
-                          border: Border.all(color: const Color(0xff64FFDA))),
+                          InkWell(
+                            onTap: () {
+                              method.launchURL(
+                                  "https://www.upwork.com/o/profiles/users/~012e81ac8e539be6a0/?s=996364627857502209");
+                            },
+                            child: const Text(
+                              "Upwork",
+                              style: TextStyle(
+                                color: Color(0xff64FFDA),
+                              ),
+                            ),
+                          ).padding(all: 15).decorated(
+                              border:
+                                  Border.all(color: const Color(0xff64FFDA))),
+                        ],
+                      ),
                     ],
                   ),
                 ),

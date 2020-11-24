@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kousik_portfolio/presentation/widgets/custom_text.dart';
 import 'package:kousik_portfolio/presentation/widgets/custom_title.dart';
 import 'package:kousik_portfolio/presentation/widgets/topbar.dart';
-import 'package:styled_widget/styled_widget.dart';
 
 class About extends StatelessWidget {
   Widget technology(BuildContext context, String text) {
