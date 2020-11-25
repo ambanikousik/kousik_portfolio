@@ -142,7 +142,10 @@ class HomePage extends StatelessWidget {
                         height: 16.0,
                       ),
                       OutlineButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          method.launchURL(
+                              "https://www.upwork.com/o/profiles/users/~012e81ac8e539be6a0/?s=996364627857502209");
+                        },
                         borderSide: const BorderSide(color: Color(0xff64FFDA)),
                         child: const Text(
                           "Hire Me",
