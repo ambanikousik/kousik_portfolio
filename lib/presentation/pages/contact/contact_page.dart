@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kousik_portfolio/presentation/method.dart';
 import 'package:kousik_portfolio/presentation/widgets/custom_text.dart';
 import 'package:kousik_portfolio/presentation/widgets/topbar.dart';
 import 'package:styled_widget/styled_widget.dart';
+import '../../method.dart';
 
-class Contact extends StatelessWidget {
+class ContactPage extends StatelessWidget {
   final Method method = Method();
   @override
   Widget build(BuildContext context) {

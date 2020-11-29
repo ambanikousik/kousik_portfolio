@@ -3,7 +3,7 @@ import 'package:kousik_portfolio/presentation/widgets/custom_text.dart';
 import 'package:kousik_portfolio/presentation/widgets/custom_title.dart';
 import 'package:kousik_portfolio/presentation/widgets/topbar.dart';
 
-class About extends StatelessWidget {
+class AboutPage extends StatelessWidget {
   Widget technology(BuildContext context, String text) {
     return Row(
       children: [

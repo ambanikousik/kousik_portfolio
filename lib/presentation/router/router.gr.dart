@@ -9,8 +9,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../pages/about.dart';
-import '../pages/contact.dart';
+import '../pages/about/about.dart';
+import '../pages/contact/contact.dart';
 import '../pages/experience/experience.dart';
 import '../pages/home_page.dart';
 import '../pages/works/works.dart';
