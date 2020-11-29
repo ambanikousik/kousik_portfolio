@@ -25,12 +25,9 @@ class PortfolioRepository extends IPortfolioRepository {
 
       final List<Experience> _result = List<Experience>.from(_convertedResponse
           .map((e) => Experience.fromJson(e['data'] as Map<String, dynamic>)));
-      // ignore: avoid_print
-      print(_result);
+
       return right(_result);
     } else {
-      // ignore: avoid_print
-      print(_response.body);
       return left(ApiFailure(errorMsg: _response.body));
     }
   }

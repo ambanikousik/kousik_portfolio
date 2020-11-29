@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kousik_portfolio/infrastructure/portfolio_repository.dart';
-import 'package:kousik_portfolio/presentation/router/router.gr.dart';
+import 'package:kousik_portfolio/infrastructure/portfolio_repository.dart'
+    deferred as repo;
+import 'package:kousik_portfolio/presentation/router/router.gr.dart'
+    deferred as router;
 import 'package:auto_route/auto_route.dart';
 
 void main() {
@@ -14,11 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider(
-      create: (context) => PortfolioRepository(),
+      create: (context) => repo.PortfolioRepository(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Rezaul Islam Kousik',
-        onGenerateRoute: AppRouter(),
+        onGenerateRoute: router.AppRouter(),
         theme: ThemeData.dark().copyWith(
             textButtonTheme: TextButtonThemeData(
                 style: TextButton.styleFrom(
@@ -32,8 +34,8 @@ class MyApp extends StatelessWidget {
             ),
             scaffoldBackgroundColor: const Color(0xff0A192F)),
         builder: ExtendedNavigator.builder(
-          router: AppRouter(),
-          initialRoute: Routes.homePage,
+          router: router.AppRouter(),
+          initialRoute: router.Routes.homePage,
         ),
       ),
     );

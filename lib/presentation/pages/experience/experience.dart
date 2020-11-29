@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kousik_portfolio/application/experience/bloc/experience_bloc.dart';
 import 'package:kousik_portfolio/infrastructure/portfolio_repository.dart';
-import 'package:kousik_portfolio/presentation/pages/experience/experience_page.dart';
+import 'package:kousik_portfolio/presentation/pages/experience/experience_page.dart'
+    deferred as exp;
 import 'package:flutter/material.dart';
 
 class Experience extends StatelessWidget {
@@ -11,7 +12,8 @@ class Experience extends StatelessWidget {
       create: (context) => ExperienceBloc(
         repository: context.read<PortfolioRepository>(),
       )..add(const ExperienceEvent.load()),
-      child: const ExperiencePage(),
+      // ignore: prefer_const_constructors
+      child: exp.ExperiencePage(),
     );
   }
 }
