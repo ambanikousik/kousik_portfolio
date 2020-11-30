@@ -2,11 +2,16 @@
 import 'package:flutter/material.dart';
 import 'package:kousik_portfolio/presentation/pages/about/about.dart'
     deferred as about;
+import 'package:kousik_portfolio/presentation/pages/contact/contact.dart'
+    deferred as contact;
 import 'package:kousik_portfolio/presentation/pages/experience/experience.dart'
     deferred as experience;
+import 'package:kousik_portfolio/presentation/pages/home_page.dart';
+import 'package:kousik_portfolio/presentation/pages/works/works.dart'
+    deferred as works;
 import 'package:styled_widget/styled_widget.dart';
 
-import '../router/router.gr.dart';
+// import '../router/router.gr.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -21,9 +26,10 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
               color: Color(0xff64FFDA),
             ),
             onPressed: () {
-              // if (RouteData.of(context).path != Routes.homePage) {
-              //   context.navigator.popUntilRoot();
-              // }
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
             }),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -35,9 +41,6 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                         context,
                         MaterialPageRoute(builder: (context) => about.About()),
                       );
-                      // if (RouteData.of(context).path != Routes.about) {
-                      //   context.navigator.push(Routes.about);
-                      // }
                     },
                     child: const Text("About"))
                 .padding(right: 10),
@@ -56,7 +59,12 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                     child: const Text("Experience"))
                 .padding(right: 10),
             TextButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      await works.loadLibrary();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => works.Works()),
+                      );
                       // if (RouteData.of(context).path != Routes.works) {
                       //   context.navigator.push(Routes.works);
                       // }
@@ -66,7 +74,14 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             // TextButton(onPressed: () {}, child: const Text("Blog"))
             //     .padding(right: 10),
             TextButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      await contact.loadLibrary();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => contact.Contact()),
+                      );
+
                       // if (RouteData.of(context).path != Routes.contact) {
                       //   context.navigator.push(Routes.contact);
                       // }
