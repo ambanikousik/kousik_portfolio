@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kousik_portfolio/infrastructure/portfolio_repository.dart';
 import 'package:kousik_portfolio/presentation/pages/splash_screen.dart';
 
+import 'no_transition.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Rezaul Islam Kousik',
         theme: ThemeData.dark().copyWith(
+            pageTransitionsTheme: NoTransitionsOnWeb(),
             textButtonTheme: TextButtonThemeData(
                 style: TextButton.styleFrom(
               primary: Colors.white70,

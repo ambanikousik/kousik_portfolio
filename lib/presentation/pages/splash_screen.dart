@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     home.loadLibrary().then((value) {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => home.HomePage()),
       );
