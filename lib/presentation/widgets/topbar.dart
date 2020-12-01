@@ -39,6 +39,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                       await about.loadLibrary();
                       Navigator.push(
                         context,
+                        // ignore: prefer_const_constructors
                         MaterialPageRoute(builder: (context) => about.About()),
                       );
                     },
