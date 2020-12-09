@@ -5,9 +5,11 @@ class CustomText extends StatelessWidget {
   final double textsize;
   final Color color;
   final double letterSpacing;
+  final bool longText;
   final FontWeight fontWeight;
   const CustomText(
       {@required this.text,
+      this.longText = false,
       @required this.textsize,
       @required this.color,
       this.letterSpacing,
@@ -17,7 +19,7 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       overflow: TextOverflow.ellipsis,
-      maxLines: 4,
+      maxLines: longText ? 100 : 4,
       // textAlign: TextAlign.center,
       style: TextStyle(
           color: color,

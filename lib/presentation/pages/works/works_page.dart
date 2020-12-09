@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kousik_portfolio/application/works/bloc/works_bloc.dart';
 import 'package:kousik_portfolio/presentation/widgets/custom_title.dart';
-import 'package:kousik_portfolio/presentation/widgets/feature_project_widget.dart';
+import 'package:kousik_portfolio/presentation/pages/works/widgets/feature_project_widget.dart';
 import 'package:kousik_portfolio/presentation/widgets/loading_widget.dart';
 import 'package:kousik_portfolio/presentation/widgets/topbar.dart';
 
