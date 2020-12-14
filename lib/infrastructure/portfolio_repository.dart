@@ -36,6 +36,7 @@ class PortfolioRepository extends IPortfolioRepository {
   Future<Either<ApiFailure, List<FeatureProject>>> getProjectsList() async {
     final http.Response _response =
         await http.get("$_baseUrl/projects", headers: _headers);
+
     if (_response.statusCode == 200) {
       try {
         final List<dynamic> _convertedResponse =

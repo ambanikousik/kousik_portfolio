@@ -13,7 +13,8 @@ class WorksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<WorksBloc, WorksState>(
         listenWhen: (prevState, currentState) =>
-            prevState.loading != currentState.loading,
+            prevState.loading != currentState.loading ||
+            prevState.errorMsg != currentState.errorMsg,
         listener: (context, state) {
           if (state.loading) {
             showDialog(
@@ -24,6 +25,21 @@ class WorksPage extends StatelessWidget {
                 return const AlertDialog(
                   backgroundColor: Colors.transparent,
                   content: LoadingWidget(),
+                );
+              },
+            );
+          } else if (state.errorMsg != null) {
+            Navigator.of(context).pop();
+            showDialog(
+              context: context,
+              barrierColor: Colors.black12,
+              barrierDismissible: true,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  backgroundColor: Colors.transparent,
+                  content: LoadingWidget(
+                    message: state.errorMsg,
+                  ),
                 );
               },
             );

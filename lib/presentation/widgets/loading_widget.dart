@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 class LoadingWidget extends StatelessWidget {
-  const LoadingWidget({Key key}) : super(key: key);
+  final String message;
+  const LoadingWidget({Key key, this.message}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +14,15 @@ class LoadingWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(
-                      width: 32,
-                      height: 32,
-                      child: CircularProgressIndicator(strokeWidth: 3))
-                  .padding(bottom: 16),
-              const Text(
-                'Please wait …',
-                style: TextStyle(color: Colors.white, fontSize: 16),
+              if (message == null)
+                const SizedBox(
+                        width: 32,
+                        height: 32,
+                        child: CircularProgressIndicator(strokeWidth: 3))
+                    .padding(bottom: 16),
+              Text(
+                message ?? 'Please wait …',
+                style: const TextStyle(color: Colors.white, fontSize: 16),
                 textAlign: TextAlign.center,
               ).padding(bottom: 4),
             ]));

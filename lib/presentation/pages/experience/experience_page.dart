@@ -28,6 +28,21 @@ class ExperiencePage extends StatelessWidget {
                 );
               },
             );
+          } else if (state.errorMsg != null) {
+            Navigator.of(context).pop();
+            showDialog(
+              context: context,
+              barrierColor: Colors.black12,
+              barrierDismissible: true,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  backgroundColor: Colors.transparent,
+                  content: LoadingWidget(
+                    message: state.errorMsg,
+                  ),
+                );
+              },
+            );
           } else {
             Navigator.of(context).pop();
           }
