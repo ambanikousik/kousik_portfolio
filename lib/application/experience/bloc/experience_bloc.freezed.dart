@@ -26,22 +26,22 @@ const $ExperienceEvent = _$ExperienceEventTearOff();
 /// @nodoc
 mixin _$ExperienceEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
+  TResult when<TResult extends Object>({
+    @required TResult load(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult load(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_Load value),
+  TResult map<TResult extends Object>({
+    @required TResult load(_Load value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_Load value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult load(_Load value),
+    @required TResult orElse(),
   });
 }
 
@@ -97,8 +97,8 @@ class _$_Load implements _Load {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
+  TResult when<TResult extends Object>({
+    @required TResult load(),
   }) {
     assert(load != null);
     return load();
@@ -106,9 +106,9 @@ class _$_Load implements _Load {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult load(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (load != null) {
@@ -119,8 +119,8 @@ class _$_Load implements _Load {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_Load value),
+  TResult map<TResult extends Object>({
+    @required TResult load(_Load value),
   }) {
     assert(load != null);
     return load(this);
@@ -128,9 +128,9 @@ class _$_Load implements _Load {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_Load value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult load(_Load value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (load != null) {

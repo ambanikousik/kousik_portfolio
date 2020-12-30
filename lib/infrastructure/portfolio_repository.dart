@@ -8,7 +8,7 @@ import 'package:kousik_portfolio/domain/i_portfolio_repository.dart';
 import 'package:http/http.dart' as http;
 
 class PortfolioRepository extends IPortfolioRepository {
-  final String _baseUrl = "https://api.apito.io/api/159317102";
+  final String _baseUrl = "https://api.apito.io/secured/rest/159317102";
   final Map<String, String> _headers = {
     "Authorization":
         "Bearer JMTiz0G4PYQCMF7v9kWukmHNLuz0rp3j5jmF7bahagLiebhyou8zOl9wM1PGdj5n80lu0HVoEpv2pfrmenlkP8VVmVpQ8WPgW8DYuzjCq8fS5732tJDh5Z6Qu92mZtAz3i54KtlfepeaU7V6NMJ1",
